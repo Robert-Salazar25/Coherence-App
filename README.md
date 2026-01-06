@@ -1,100 +1,98 @@
 # 🧠 Coherence 
-## Junior Developer | 📱 Platform: Android (Kotlin) | ⏳ Status: Funcional Completo
-Una aplicación profesional de biofeedback que sirve como interfaz para un dispositivo personalizado construido con ESP32 y sensor MAX30102, desarrollado como proyecto de tesis de TSU en Ingeniería Electrónica. El firmware del dispositivo fue programado en Arduino IDE, enviando datos en formato "TEMP, HR, SPO2, HRV, GSR, STATUS" a través de Bluetooth Low Energy. El sistema completo permite medir y monitorear variables fisiológicas en tiempo real para el análisis de coherencia cardíaca y gestión del estrés.
+## Junior Developer | 📱 Platform: Android (Kotlin) | ⏳ Status: Complete & Functional
+A professional biofeedback application serving as an interface for a custom device built with ESP32 and MAX30102 sensor, developed as a TSU thesis project in Electronic Engineering. The device firmware was programmed in Arduino IDE, sending data in "TEMP, HR, SPO2, HRV, GSR, STATUS" format via Bluetooth Low Energy. The complete system allows measuring and monitoring physiological variables in real-time for heart coherence analysis and stress management.
 
-La aplicación se conecta mediante Bluetooth Low Energy (BLE) al dispositivo personalizado, recibiendo datos crudos que son procesados y visualizados en una interfaz moderna e intuitiva. Implementa algoritmos científicos para calcular la coherencia cardíaca basada en HRV, frecuencia cardíaca, temperatura periférica y conductancia de la piel, proporcionando una herramienta profesional para entrenamiento en biofeedback.
+The application connects via Bluetooth Low Energy (BLE) to the custom device, receiving raw data that is processed and visualized in a modern, intuitive interface. It implements scientific algorithms to calculate heart coherence based on HRV, heart rate, peripheral temperature, and skin conductance, providing a professional tool for biofeedback training.
 
-## 🎯 Características Principales
+## 🎯  Key Features
 
-### 📊 Monitoreo en Tiempo Real
-- 6 variables fisiológicas: Frecuencia cardíaca (HR), Variabilidad (HRV), Oxígeno (SpO2), Temperatura, Conductancia (GSR), Estado de contacto
-- Conexión BLE con ESP32: Integración completa con dispositivo hardware personalizado
-- Protocolo Arduino: Datos sincronizados con formato: "36.5, 72, 98, 45, 35, BUENA"
-- Parsing robusto: Manejo de conversiones como GSR (×10) y validación de estado
+### 📊 Real-Time Monitoring
+- 6 physiological variables: Heart rate (HR), Variability (HRV), Oxygen (SpO2), Temperature, Skin Conductance (GSR), Contact status
+- BLE connection with ESP32: Complete integration with custom hardware device
+- Arduino protocol: Data synchronized in format: "36.5, 72, 98, 45, 35, BUENA"
+- Robust parsing: Handling conversions like GSR (×10) and status validation
 
-### 🧮 Algoritmos de Coherencia
-- Dos algoritmos científicos: Original: HRV (70%) + Temperatura (20%) + GSR (10%), Mejorado: HRV (50%) + HR (20%) + Touch (20%) + Temperatura (10%)
-- Cálculo de estrés: Basado en coherencia inversa (0-100%)
-- Validaciones hardware: Detección de contacto "BUENA"/"SIN_DEDO" del ESP32
+### 🧮 Coherence Algorithms
+- Two scientific algorithms: Original: HRV (70%) + Temperature (20%) + GSR (10%), Improved: HRV (50%) + HR (20%) + Touch (20%) + Temperature (10%)
+- Stress calculation: Based on inverse coherence (0-100%)
+- Hardware validations: Contact detection "BUENA"/"SIN_DEDO" from ESP32
 
-### 🧘 Ejercicios Guiados
-- Respiración 4-7-8: Inhala (4s), Mantén (7s), Exhala (8s)
-- Animaciones visuales sincronizadas con datos del ESP32
-- Sonidos guiados para cada fase de respiración
-- Sesiones temporizadas (2, 5, 10, 15, 20 minutos configurables)
+### 🧘 Guided Exercises
+- 4-7-8 Breathing: Inhale (4s), Hold (7s), Exhale (8s)
+- Visual animations synchronized with ESP32 data
+- Guided sounds for each breathing phase
+- Timed sessions (2, 5, 10, 15, 20 minutes configurable)
 
-### 📈 Historial y Análisis
-- Vista semanal y mensual con gráficos interactivos
-- Tendencias visuales con gráficos de línea suavizados
-- Calendario interactivo con días de actividad
-- Detalle completo de sesiones con 5 gráficos individuales
-- Exportación y eliminación de datos históricos
+### 📈 History & Analysis
+- Weekly and monthly view with interactive charts
+- Visual trends with smoothed line graphs
+- Interactive calendar with activity days
+- Complete session detail with 5 individual charts
+- Export and deletion of historical data
 
-### ⚙️ Sistema Completo de Configuración
-- Modo oscuro/claro con persistencia
-- Recordatorios diarios programables
-- Gestión de sonidos y notificaciones
-- Duración personalizable de sesiones
-- Gestión de permisos BLE (Android 12+ compatible)
+### ⚙️ Complete Configuration System
+- Dark/light mode with persistence
+- Programmable daily reminders
+- Sound and notification management
+- Customizable session duration
+- BLE permission management (Android 12+ compatible)
 
-## 🏗️ Arquitectura Técnica
+## 🏗️ Technical Architecture
 
-### 🛠️ Stack Tecnológico Principal
-- Lenguaje: Kotlin 100%
-- UI Moderna: Jetpack Compose + Material Design 3
-- Arquitectura: Clean Architecture + MVVM
-- Base de datos: Room con TypeConverters
-- Concurrencia: Coroutines + Flow/StateFlow
-- Inyección Dependencias: Dagger Hilt
+### 🛠️ Main Technology Stack
+- Language: Kotlin 100%
+- Modern UI: Jetpack Compose + Material Design 3
+- Architecture: Clean Architecture + MVVM
+- Database: Room with TypeConverters
+- Concurrency: Coroutines + Flow/StateFlow
+- Dependency Injection: Dagger Hilt
 - BLE: Android Bluetooth Low Energy API
-- Persistencia: DataStore para preferencias
-- Notificaciones: AlarmManager + NotificationCompat
+- Notifications: AlarmManager + NotificationCompat
 
-### 📱 Pantallas Implementadas
-- WelcomeScreen - Bienvenida con gestión de permisos BLE
-- MainScreen - Dashboard principal con datos en tiempo real del ESP32
-- ExerciseScreen - Ejercicio de respiración con animaciones
-- HistoryScreen - Historial semanal/mensual con gráficos
-- SessionDetailScreen - Análisis detallado post-sesión
-- SettingsScreen - Configuración completa de la app
+### 📱 Implemented Screens
+- WelcomeScreen - Welcome with BLE permission management
+- MainScreen - Main dashboard with real-time ESP32 data 
+- ExerciseScreen - Breathing exercise with animations
+- HistoryScreen - Weekly/monthly history with charts
+- SessionDetailScreen - Detailed post-session analysis
+- SettingsScreen - Complete app configuration
 
-## 🔧 Integración Hardware ESP32 + Arduino
+## 🔧 ESP32 + Arduino Hardware Integration
 
-### 🔌 Protocolo de Comunicación
-- Dispositivo: ESP32 con firmware Arduino IDE
-- Sensor: MAX30102 para mediciones fisiológicas
-- Formato datos: "TEMP, HR, SPO2, HRV, GSR, STATUS" 
-- UUID BLE: UART estándar (6E400001-B5A3-F393-E0A9-E50E24DCCA9E)
-- Estado contacto: "BUENA" (fingerDetected) / "SIN_DEDO"
+### 🔌 Communication Protocol
+- Device: ESP32 with Arduino IDE firmware
+- Sensor: MAX30102 for physiological measurements
+- Data format: "TEMP, HR, SPO2, HRV, GSR, STATUS"
+- BLE UUID: Standard UART (6E400001-B5A3-F393-E0A9-E50E24DCCA9E) 
+- Contact status: "BUENA" (fingerDetected) / "SIN_DEDO" (no finger)
 
+## 🎓 What This Project Demonstrates
+### 💡 Proven Technical Skills
+- Hardware/software integration: ESP32 (Arduino) + Android (Kotlin)
+- Applied Clean Architecture: Real layer separation in complex project
+- Communication protocols: Custom BLE with robust parsing
+- Scientific algorithms: Physiological signal processing
+- Advanced UI/UX: Fluid animations and real-time feedback
 
-## 🎓 Lo Que Este Proyecto Demuestra
-### 💡 Habilidades Técnicas Comprobadas
-- Integración hardware/software: ESP32 (Arduino) + Android (Kotlin)
-- Clean Architecture aplicada: Separación real de capas en proyecto complejo
-- Protocolos de comunicación: BLE personalizado con parsing robusto
-- Algoritmos científicos: Procesamiento de señales fisiológicas
-- UI/UX avanzado: Animaciones fluidas y feedback en tiempo real
+### 🏗️ Key Architectural Decisions
+- Real separation: Pure domain (no Android), Data (implementations), UI (presentation)
+- Unidirectional flows: UI → ViewModel → UseCase → Repository → Data → Hardware
+- Testability: Each layer can be tested independently
+- Scalability: Adding new data sources (APIs, sensors) is trivial
+- Maintainability: Isolated changes thanks to interfaces and injection
 
-### 🏗️ Decisiones Arquitectónicas Clave
-- Separación real: Domain puro (sin Android), Data (implementaciones), UI (presentación)
-- Flujos unidireccionales: UI → ViewModel → UseCase → Repository → Data → Hardware
-- Testabilidad: Cada capa puede testearse independientemente
-- Escalabilidad: Añadir nuevas fuentes de datos (API, sensores) es trivial
-- Mantenibilidad: Cambios aislados gracias a interfaces e inyección
+## 👨‍💻 About the Developer
+Robert Salazar - Junior Developer passionate about clean software engineering and applications with real impact on health and well-being. This project demonstrates the ability to integrate hardware systems (ESP32/Arduino) with professional mobile software, applying enterprise architecture in an educational electronic engineering context.
 
-## 👨‍💻 Sobre el Desarrollador
-Robert Salazar - Desarrollador Junior apasionado por la ingeniería de software limpia y las aplicaciones con impacto real en la salud y bienestar. Este proyecto demuestra la capacidad de integrar sistemas hardware (ESP32/Arduino) con software móvil profesional, aplicando arquitectura empresarial en un contexto educativo de ingeniería electrónica.
+Development philosophy:
 
-Filosofía de desarrollo:
+- Architecture over convenience
+- Maintainable code over "clever" code
+- Fluid hardware/software integration
+- Continuous learning through challenging projects
 
-- Arquitectura sobre conveniencia
-- Código mantenible sobre código "inteligente"
-- Integración hardware/software fluida
-- Aprendizaje continuo mediante proyectos desafiantes
-
-## 📞 Conectemos
+## 📞 Let's Connect
 - 💼 LinkedIn: https://www.linkedin.com/in/robert-salazar-630250360
 - 📧 Email: robl.sala25@gmail.com
 
-¿Buscas un desarrollador Junior con habilidades en integración hardware/software, arquitectura limpia y atención al detalle en proyectos complejos? ¡Hablemos!
+Looking for a Junior Developer with skills in hardware/software integration, clean architecture, and attention to detail in complex projects? Let's talk!
